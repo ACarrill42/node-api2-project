@@ -74,7 +74,7 @@ router.delete('/:id', (req, res) => {
 });
 
 router.get('/:id/comments', (req, res) => {
-  Posts.findPostComments(req.params.id)
+  Posts.findPostComments(req.query.id)
   .then(comment => {
     if(!comment) {
       res.status(404).json({message: 'The post with the Id does not exist'})
